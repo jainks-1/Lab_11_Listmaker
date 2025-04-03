@@ -1,5 +1,5 @@
 // Kaden Jain
-// Lab 11 - List maker
+// Lab 11 - List maker lab
 
 import java.util.ArrayList;
 import java.util.Scanner;
