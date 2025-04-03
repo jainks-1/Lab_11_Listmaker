@@ -1,3 +1,6 @@
+// Kaden Jain
+// Lab 11 - List maker
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,11 +13,11 @@ public class Listmaker {
 
         String menuChoice = " ";
 
-        boolean cont = false;
+        boolean cont = false; // determines if program terminates or not from get y/n confirm
 
         do {
-            // print the main array
-            printList();
+            // print the main array as an array, non list view
+            System.out.println(mainArray);
 
             // print the menu
             displayMenu();
@@ -63,7 +66,7 @@ public class Listmaker {
         System.out.println("Added item: " + userInput + "\n\n");
     }
 
-    // deletes item by number
+    // deletes item by number in list
     private static void deleteItem(){
         Scanner in = new Scanner(System.in);
 
@@ -82,6 +85,8 @@ public class Listmaker {
     private static void insertItem(){
         Scanner in = new Scanner(System.in);
 
+        printList();
+
         String userInput = SafeInput.getNonZeroLenString(in, "Enter item to insert");
         int index = SafeInput.getRangedInt(in, "Enter position to insert at", 1, mainArray.size() + 1) - 1;
 
@@ -91,7 +96,7 @@ public class Listmaker {
 
     // prints the list vertically + numbered
     private static void printList(){
-        System.out.println("\nCurrent List:");
+        System.out.println("\nNumbered List:");
         for (int i = 0; i < mainArray.size(); i++) {
             System.out.println((i + 1) + ". " + mainArray.get(i));
         }
